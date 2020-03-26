@@ -1,0 +1,99 @@
+@import "fixBody.css";
+:root{
+    --primary: black;
+}
+html{
+    font-family: 'Turret Road', cursive;
+    font-weight: 400;
+    font-size: 30px;
+}
+/* temp bugs fix
+.main-container{border: 1px magenta solid;}
+header{border: 1px blue solid;}
+temp bug fix */
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80vw;
+    margin: auto;
+    margin-bottom: 15vh;
+    text-align: center;
+}
+.main-container header{
+    text-align: center;
+    font-family: 'Turret Road', cursive;
+    font-weight: 800;
+    font-size: 4rem;
+    margin-bottom: 2%;
+    text-align: center;
+}
+.main-container ul a{
+    text-decoration: none;
+    color: var(--primary);
+}
+.main-container ul{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    list-style-type: none;
+    line-height: 2.6;
+    border-top: 1px var(--primary) solid;
+    padding-left: 0;
+}
+.main-container ul li{
+    border-bottom: 1px var(--primary) solid;
+}
+.main-container ul li:hover{
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+#bottom-bar{
+    width: 100vw;
+    background-color: rgba(10, 10, 10, 0.2);
+    text-align: center;
+}
+.my-cart {
+    width: 100px; 
+    margin: auto;
+    border-radius: 50%;
+    border: 5px transparent solid;
+    margin-bottom: 15vh;
+    transition: 0.5s;
+}
+.my-cart:hover{
+    border: 5px black double;
+}
+@media(min-width: 601px){
+    #bottom-bar{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
+@media(max-width: 600px){
+    .main-container{
+        width: 90vw;
+        margin-bottom: 30vh;
+    }
+    .main-container header{
+        font-size: 20vw;
+    }
+    .main-container ul{
+        margin-top: 10vh;
+    }
+    #bottom-bar{
+        width: 100%;
+    }
+    .my-cart {
+        margin: unset;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        width: 30vw;
+        border-width: 10px;
+    }
+    .my-cart:hover{
+        border-width: 10px;
+    }
+}

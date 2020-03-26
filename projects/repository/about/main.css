@@ -1,0 +1,265 @@
+body{
+    background-image: url("images/background.jpg");
+    font-family: 'Righteous', cursive;
+    color: black;
+}
+/*linear-gradient(to right, black, grey)*/
+#load_screen{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+#mobileLoading{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+#mainBox{
+    position: absolute;
+    background-color: grey;
+    color: rgba(0, 0, 0, 0.9);
+}
+#name{
+    position: absolute;
+    overflow: hidden; 
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em; 
+    animation: 
+    typing 5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+#info{
+    position: absolute;
+    left: 0;
+    right: 0;
+    overflow: hidden; 
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    margin: auto;
+    letter-spacing: .15em; 
+    animation: 
+    typing1 5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+.descriere{
+    overflow: hidden; 
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em; 
+    animation: 
+    typing2 5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+#facebookLogo, #instagramLogo{
+    position: absolute;
+    border: 1px black solid;
+    transition: 0.6s;
+}
+#logoLiceu{
+    display: none;
+    transition: 0.5s;
+    animation: zoomin 3s;
+}
+#hands{
+    position: absolute;
+}
+#profilePic{
+    padding: 1px;
+    border: 1px black solid;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 350px }
+  }
+@keyframes typing1 {
+    from { width: 0 }
+    to { width: 300px }
+}
+@keyframes typing2 {
+    from { width: 0 }
+    to { width: 100%; }
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+}
+@media(min-width : 700px){
+    html,body{
+        cursor: url("images/cursor.png"), auto;
+    }
+    #ratGif{
+        display: none;
+    }
+    #mainBox{
+        left: calc(50% - 300px);
+        top: calc(50% - 300px);
+        width: 600px;
+        height: 600px;
+        
+    }
+    #profilePic{
+        margin: 10px;
+        width: 125px;
+        height: 155px;
+        border: 3px black solid;
+    }
+    #name{
+        top: 20px;
+        left: 200px;
+        font-size: 30px;
+        width: 350px;
+    }
+    #info{
+        top: 80px;
+        left: 220px;
+        width: 300px;
+        font-size: 20px;
+    }
+    .descriere{
+        width: 90%;
+    }
+    #facebookLogo{
+        bottom: 10px;
+        left: 10px;
+        width: 140px;
+        height: 45px;
+    }
+    #instagramLogo{
+        bottom: 10px;
+        right: 10px;
+        width: 160px;
+        height: 45px;
+    }
+    #hands{
+        bottom: -35px;
+        width: 70px;
+    }
+    .handLeft{
+        left: 35px;
+    }
+    .handRight{
+        right: 35px;
+    }
+    .socialBtn:hover{
+        cursor: pointer;
+    }
+    #facebookLogo:hover{
+        width: 170px;
+        height: 55px;
+        border-radius: 50px;
+    }
+    #instagramLogo:hover{
+        width: 180px;
+        height: 55px;
+        border-radius: 50px;
+    }
+    #logoLiceu{
+        width: 150px;
+        height: 150px;
+    }
+    #logoLiceu:hover{
+        width: 200px;
+        height: 100px;
+    }
+    .lowerText{
+        font-size: 15px;
+    }
+    .biggerText{
+        font-size: 45px;
+    }
+    @keyframes zoomin {
+        from { width: 10px; height: 10px;}
+        to   { width: 150px; height: 150px;}
+    }
+}
+@media(max-width: 700px){
+    @keyframes zoomin {
+        from { width: 1%; height: 1%;}
+        to   { width: 30%; height: 30%;}
+    }
+    #ratDiv{
+        position: absolute;
+        top: -20%;
+        right: 0px;
+        width: 100%;
+        height: 15%;
+    }
+    #ratGif{ 
+        width: 60%;
+    }
+    #mainBox{
+        top: 15%;
+        left:5%;
+        width: 90%;
+        height: 80%;
+        border: 2px rgba(0, 0, 0, 0.5) solid;
+        
+    }
+    #profilePic{
+        margin: 2%;
+        width: 22%;
+        /*height: 24%;*/
+    }
+    #name{
+        top: 3%;
+        left: 27%;
+        font-size: 1.1em;
+        width: 70%;
+    }
+    #info{
+        top: 14%;
+        left: 27%;
+        width: 67%;
+        font-size: 0.9em;
+    }
+    .descriere{
+        margin: auto;
+        width: 90%;
+    }
+    .biggerText{
+        font-size: 1.6em;
+    }
+    .lowerText{
+        font-size: 0.7em;
+    }
+    #logoLiceu{
+        width: 30%;
+        height: 30%;
+    }
+    #facebookLogo{
+        bottom: 1%;
+        left: 1%;
+        width: 30%;
+        height: 7%;
+    }
+    #instagramLogo{
+        bottom: 1%;
+        right: 1%;
+        width: 30%;
+        height: 7%;
+    }
+    #hands{
+        bottom: -10px;
+        width: 40px;
+    }
+    .handLeft{
+        left: 10%;
+    }
+    .handRight{
+        right: 10%;
+    }
+    @media(min-width: 350px){
+        #name{font-size: 1.2em;}
+        #info{font-size: 1.0em;}
+        .biggerText{font-size: 1.8em;}
+        .lowerText{font-size: 0.8em;}
+    }
+}

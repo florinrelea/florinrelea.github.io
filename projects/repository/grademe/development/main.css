@@ -1,0 +1,8 @@
+@media(min-width: 800px){
+    body{
+        background-image: linear-gradient(white,yellow);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}

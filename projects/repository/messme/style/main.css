@@ -1,0 +1,260 @@
+@import "fonts/PressStart2P-Regular.css";
+*{
+    font-family: 'Press Start 2P'; 
+}
+html{
+    background-image: url("../required/media/oldTv.jpg");
+    background-repeat: repeat;
+    color: white;
+    font-size: 1rem;
+    min-height: 100vh;
+    max-width: 100vw;
+}
+#loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: red;
+    font-size: 3rem;
+}
+#loader p{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+body{
+    padding-bottom: 15vh;
+}
+header, .message{
+    background-color: black;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px;
+    border: 1px white solid;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+header #auth{
+    font-size: 1.5rem;
+    color: red;
+}
+.message{
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem;
+    padding: 5px;
+    padding-left: 20px;
+}
+.message:last-of-type{
+    transition: 0.2s;
+    animation: 0.8s animation1 1;
+}
+.message #author{
+    color: red;
+}
+.message #content{
+    color: blue;
+}
+.sender{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    width: 100%;
+}
+.sender span{
+    position: absolute;
+    bottom: 10px;
+    right: 3rem;
+}
+.sender input[type=text]{
+    padding:10px;
+    padding-left: 20px;
+    border-radius: 20px;
+    border: none;
+    font-size: 1rem;
+}
+.sender input[type=submit]{
+    padding: 5px;
+    border: 1px black solid;
+    background-color: rgba(0, 0, 255, 0.4);
+    color: red;
+    font-size: 1rem;
+    border-radius: 10px;
+    transition: 0.2;
+}
+.sender input[type=submit]:hover{
+    cursor: pointer;
+    transform: scale(0.9);
+}
+#logger{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-image: url("../required/media/oldTv.jpg");
+    background-repeat: repeat;
+    display: none;
+}
+#logger .container{
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border: 3px dashed red;
+}
+#logger .container h{
+    text-align: center;
+    color: red;
+}
+#logger .container input[type=text]{
+    padding: 5px;
+    background-color: rgba(255, 255, 255,0.7);
+    border: 2px red solid;
+}
+#logger .container input[type=submit]{
+    padding: 10px;
+    background-color: rgba(255, 0, 0, 0.6);
+    color: blue;
+    border: 1px blue solid;
+    transition: 0.5s;
+}
+#logger .container input[type=submit]:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 255, 0.7);
+    color: red;
+    border: 1px red solid;
+}
+.voter{
+    background-color: red;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: blue;
+    border: 5px solid blue;
+    transition: 0.2s;
+    box-shadow: 0px 0px 4px 4px black;
+}
+.voter #votebox{
+    transform: scale(2);
+    transition: 0.3s;
+}
+.voter #votebox:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 15px 5px blue;
+}
+@keyframes animation1{
+    from{
+        transform: translateX(-100vw);
+        box-shadow: 0px 0px 40px 20px red;
+    }
+    to{
+        transform: translateY(0);
+        box-shadow: 0px 0px 40px 20px blue;
+    }
+}
+@keyframes animation2{
+    from{box-shadow: 0px 0px 20px 20px red;}
+    to{box-shadow: 0px 0px 5px 5px black;}
+}
+@media all and (max-width:730px){
+    body{
+        padding-bottom: 30vh;
+    }
+    header{
+        flex-direction: column;
+        text-align: center;
+        font-size: 10vw;
+    }
+    header #auth{
+        font-size: 5vw;
+        padding-bottom: 20px;
+    }
+    .voter{
+        font-size: 4vw;
+        line-height: 2;
+    }
+    .voter #votebox{
+        transform: scale(3);
+    }
+    #logger .container{
+        width: 80%;
+        height: 50%;
+        border: unset;
+        box-shadow: 0px 0px 30px 5px red;
+        font-size: 7vw;
+        animation: 1s animation2 alternate-reverse infinite;
+    }
+    #logger .container h{
+        text-decoration: underline red;
+    }
+    #logger .container input[type=text]{
+        font-size: 4vw;
+        padding: 10px;
+    }
+    #logger .container input[type=submit]{
+        font-size: 5vw;
+        padding: none;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .message{
+        font-size: 3vw;
+    }
+    .sender{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: unset;
+        text-align: center;
+        padding: unset;
+        text-align: center;
+        width: 100%;
+    }
+    .sender input[type=text]{
+        margin: unset;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: calc(90% - 10px);
+        font-size: 4vw;
+    }
+    .sender input[type=submit]{
+        margin: auto;
+        font-size: 5vw;
+        width: 90%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center ;
+        margin-bottom: 40px;
+    }
+    .sender span{
+        font-size: 1.5vw;
+        text-align: center;
+        position: unset;
+    }
+}
+@media all and (max-height:400px){
+    #logger .container{
+        width: 80%;
+        height: 80vh;
+    }
+}

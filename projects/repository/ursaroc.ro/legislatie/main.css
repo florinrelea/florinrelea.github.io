@@ -1,0 +1,73 @@
+:root {
+    --customBorder2: 5px #FFCA0A solid;
+    --customBorder3: 3px #FFCA0A solid;
+}
+.nav-bar{
+    position: unset;
+}
+.center-content{
+    width: 80%;
+    min-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+.center-content .higher{
+    width: 10%;
+}
+.center-content .lower{
+    width: 5%;
+}
+.schedule{
+    list-style-type: none;
+    padding-left: 0px;
+    width: 60%;
+    min-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    margin: auto;
+    margin-bottom: 20vh;
+    border: var(--customBorder2);
+    color: black;
+    background-color: rgba(136, 136, 0, 0.3);
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+.schedule li{
+    border: 1px black solid;
+    text-align: center;
+}
+.thicker{
+    font-weight: 800;
+}
+
+@media(max-width: 800px){
+    .center-content{
+        min-width: unset;
+        width: 100%;
+    }
+    .center-content .higher{
+        width: 40%;
+    }
+    .center-content .lower{
+        width: 20%;
+    }
+    .schedule{
+        grid-template-columns: 1fr;
+        min-width: unset;
+        width: 90%;
+        font-size: 5vw;
+    }
+    .schedule li{
+        border: unset;
+    }
+    .schedule .thicker{
+        border-top: var(--customBorder3);
+        border-bottom: var(--customBorder3);
+    }
+    .schedule .thicker:first-of-type{
+        border-top: none;
+    }
+}

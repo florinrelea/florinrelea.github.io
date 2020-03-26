@@ -1,0 +1,43 @@
+html{
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+}
+body{
+    padding-bottom: 5%;
+}
+#inputMessage{
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 40%;
+    color: white;
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    border: 2px white solid;
+    border-radius: 20px;
+    background-color: rgb(22, 22, 22);
+    padding: 5px;
+    padding-left: 15px;
+}
+#send{
+    position: fixed;
+    bottom: 10px;
+    left: calc(40px + 40%);
+    background-color: rgb(21, 21, 21);
+    color: white;
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    border: 2px white solid;
+    border-radius: 20px;
+    padding: 5px;
+}
+@media(max-width: 500px){
+    body{
+        padding-bottom: 20%;
+    }
+    #inputMessage, #send{
+        bottom: 7%;
+    }
+}

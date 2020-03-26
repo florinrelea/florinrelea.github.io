@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MessMe</title>
+    <meta name="author" content="Relea Florin Iacob">
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+    <header>
+        <span id="auth"></span><span>MessMe</span>
+    </header>
+    <div class="voter">
+        <p>Vote for chat cleaning <input type="checkbox" id="votebox"> <span id="votes">0</span>/<span id="users">1</span></p>
+    </div>
+    <form id="sender-form" class="sender">
+        <input id="send-content" type="text" max="100" autocomplete="off" required>
+        <input id="send-button" type="submit" value="Send">
+        <span>&copy; Relea Florin</span>
+    </form>
+    <div id="logger">
+        <form id="submit-name" class="container">
+            <h>User</h>
+            <input type="text" id="logger-name" minlength="4" maxlength="10" placeholder="Santa Claus" required>
+            <input type="submit" id="logger-submit" value="That's my name">
+        </form>
+    </div>
+    <div id="loader">
+        <p>Loading</p>
+    </div>
+    <script type="text/javascript" src="scripts/loadingComponent.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase.js"></script>
+    <script type="text/javascript" src="scripts/engine.js"></script>
+    <script type="text/javascript" src="scripts/debuggers.js"></script>
+</body>
+</html>

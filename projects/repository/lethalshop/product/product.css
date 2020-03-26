@@ -1,0 +1,284 @@
+@import "../fixBody.css";
+:root{
+    --primary: black;
+    --borderWidth: 0.5px;
+    --background: rgba(245, 245, 245, 1);
+    --darkerBackground: rgba(240, 240, 240, 1);
+    --dollarGreen: rgba(133 ,187 ,101, 1);
+    --iframeHeight: 500px;
+}
+html{
+    font-size: 1rem;
+    color: var(--primary);
+    font-family: 'Turret Road', cursive;
+    font-weight: 400;
+    background-color: var(--background);
+}
+.container{
+    text-align: center;
+    border-left: var(--borderWidth) black dotted;
+    border-right: var(--borderWidth) black dotted;
+}
+#container-1 img{
+    border: var(--borderWidth) transparent solid;
+    border-top-left-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+    width: 600px;
+    max-width: 600px;
+    margin-bottom: 5%;
+    transition: 500ms;
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+}
+#container-1 img:hover{
+    cursor: pointer;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+}
+#items-grid{
+    width: 80%;
+    margin: auto;
+    row-gap: 5%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    column-gap: 1%;
+    margin-bottom: 20vh;
+}
+header{
+    border-top: var(--borderWidth) black dotted;
+    border-bottom: var(--borderWidth) black dotted;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 3rem;
+}
+#container-2{
+    align-self: flex-end;
+    /* border: 0.5px black dotted; */
+    border: 5px transparent solid;
+    background-color: var(--darkerBackground);
+    transition: 1s;
+    animation: borderAnim 1s infinite;
+}
+@keyframes borderAnim{
+    from{ border: 5px red solid} to {border: 5px var(--dollarGreen) solid}
+}
+.price{
+    float: center;
+}
+.price img{
+    width: 5vh;
+    margin-right: 1rem;
+}
+#price{
+    color: rgba(220, 0, 0, 1);
+    font-size: 5vh;
+    font-weight: 700;
+}
+button{
+    background-color: rgba(245, 245, 245, 1);
+    border: 1px rgba(220, 0, 0, 1) solid;
+    border-left: 3rem rgba(220, 0, 0, 1) solid;
+    padding: 0.2rem;
+    font-family: 'Turret Road', cursive;
+    font-size: 2rem;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: 700;
+    transition: 0.5s;
+}
+button:hover{
+    cursor: pointer;
+    border: 1px rgba(133 ,187 ,101, 1) solid;
+    color: rgba(133 ,187, 101, 1);
+    border-right: 3rem rgba(133 ,187 ,101, 1) solid;
+}
+button:hover #img{
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+}
+#container-3{
+    display: grid;
+    row-gap: 5%;
+    padding: 1rem;
+}
+#container-3 h1{
+    font-size: 3rem;
+    border-bottom: var(--borderWidth) black dotted;
+    font-weight: 600;
+    text-align: left;
+}
+#container-3 #description{
+    width: 80%;
+    margin: auto;
+    padding: 5%;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+}
+#bottom-bar{
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.2);
+    text-align: center;
+    line-height: 2;
+}
+iframe{
+    --iframeHeight: 50vh;
+    width: 80%;
+    height: var(--iframeHeight);
+    margin: auto;
+    margin-bottom: 30vh;
+}
+#item-in-cart, #item-added{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 300px;
+    text-align: center;
+}
+#item-in-cart{
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: 10px white double;
+}
+#item-in-cart h2{
+    color: red;
+    font-size: 2rem;
+}
+#item-in-cart input{
+    font-family: 'Turret Road', cursive;
+    font-size: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    width: 5rem;
+}
+#item-added{
+    background-color: white;
+    color: red;
+    border: 3px red solid;
+}
+#item-added h2{
+    font-size: 2rem;
+}
+#item-added img{
+    width: 20%;
+}
+.close-window{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    border-radius: 50%;
+    transition: 0.3s;
+    border: 1px black solid;
+}
+.close-window:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 5px white;
+}
+@media screen and (max-width: 1200px) and (min-width: 801px){
+    #items-grid{
+        width: 90vw;
+        grid-template-columns: 1fr;
+        margin: auto;
+        margin-bottom: 15vh;
+    }
+    #items-grid #container-2{
+        width: 50vw;
+        margin: auto;
+
+    }
+    #items-grid #contaier-2 p img{
+        width: 10vw;
+    }
+    #items-grid #container-2 p span{
+        font-size: 5vw;
+    }
+    #items-grid #container-2 button{
+        width: 70%;
+    }
+    #bottom-bar{
+        font-size: 3vw;
+        max-width: 100%;
+    }
+    iframe{
+        width: 100%;
+        --iframeHeight: 40vh;
+        height: var(--iframeHeight);
+    }
+}
+@media(max-width: 800px){
+    #items-grid{
+        max-width: 90%;
+        grid-template-columns: 1fr;
+        row-gap: 10vh;
+        column-gap: 0;
+        margin: auto;
+        margin-bottom: 15vh;
+    }
+    #items-grid #container-2{
+        width: 80%;
+        max-width: 80%;
+        margin: auto;
+    }
+    #items-grid #container-1 #myHead{
+        font-size: 10vw;
+    }
+    #items-grid #container-1 img{
+        max-width: 80%;
+    }
+    
+    #items-grid #container-2 img{
+        width: 10vw;
+    }
+    #items-grid #container-2 span{
+        font-size: 10vw;
+    }
+    #items-grid #container-2 button{
+        max-width: 80%;
+        height: 10vw;
+        font-size: 8vw;
+    }
+    #items-grid #container-3 h1{
+        font-size: 8vw;
+    }
+    #container-3 #description{
+        max-width: 80%;
+    }
+    #item-in-cart, #item-added{
+        width: 94vw;
+        height: 50vh;
+    }
+    #item-in-cart h2{
+        font-size: 6vw;
+    }
+    #item-in-cart p{
+        font-size: 6vw;
+    }
+    #item-in-cart input{
+        font-size: 7vw;
+        width: 35vw;
+    }
+    #item-in-cart button{
+        font-size: 8vw;
+    }
+}
+@media(max-width: 401px){
+    #items-grid{
+        display: unset;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+@media(max-height: 400px){
+    #item-in-cart{
+        height: 94%;
+    }
+}

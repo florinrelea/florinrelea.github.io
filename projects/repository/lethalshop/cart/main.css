@@ -1,0 +1,271 @@
+:root{
+    --borderWidth: 0.5px;
+}
+a{
+    color: black;
+}
+a:hover{
+    cursor: pointer;
+}
+html{
+    font-family: 'Turret Road', cursive;
+    font-size: 1rem;
+}
+header, h2{
+    text-align: center;
+    font-family: 'Turret Road', cursive;
+    font-weight: 800;
+    font-size: 3rem;
+    text-align: center;
+}
+header{
+    font-size: 4rem;
+    margin-bottom: 15vh;
+    text-decoration: underline;
+}
+h2{
+    margin-bottom: 0;
+}
+.cart-grid{
+    display: grid;
+    grid-template-columns: 16fr 1fr;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+.cart-item{
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    width: 100%;
+    list-style-type: none;
+    padding-left: 0;
+    border: 1px black solid;
+    font-size: 2rem;
+}
+.cart-item li{
+    padding: 1rem;
+    border: 1px black solid;
+}
+#complete-order{
+    background-color: rgba(245, 245, 245, 1);
+    border: 1px rgba(220, 0, 0, 1) solid;
+    border-left: 3rem rgba(220, 0, 0, 1) solid;
+    padding: 0.2rem;
+    font-family: 'Turret Road', cursive;
+    font-size: 2rem;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: 700;
+    transition: 0.5s;
+    margin-bottom: 10vh;
+}
+#complete-order:hover{
+    cursor: pointer;
+    border: 1px rgba(133 ,187 ,101, 1) solid;
+    color: rgba(133 ,187, 101, 1);
+    border-right: 3rem rgba(133 ,187 ,101, 1) solid;
+}
+.close-window{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    transition: 0.3s;
+    border: 1px black solid;
+    border-radius: 50%;
+}
+.close-window:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 5px black;
+}
+/* tests running */
+#order-window form div{text-align: center;} 
+#order-window form #infoDiv .left-side{border-right: 5px black double;}
+#order-window form #infoDiv .right-side{border-left: 5px black double;}
+/* tests running */
+#order-window{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 70%;
+    height: 80%;
+    background-color: white;
+    border-radius: 50px;
+    border: 5px black double;
+    font-family: 'Turret Road', cursive;
+    padding-top: 50px;
+    overflow: hidden;
+}
+#order-window form span{
+    color: red;
+}
+#order-window #infoDiv{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 5%;
+    grid-row-gap: 20%;
+    font-size: 2rem;
+}
+#order-window form #infoDiv h2{
+    font-size: 3rem;
+} 
+#order-window form input{
+    font-family: 'Turret Road', cursive;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    padding-left: 1rem;
+    border: var(--borderWidth) black solid;
+}
+.lower-text{
+    font-size: 1rem;
+}
+#order-window form #priceDiv{
+    font-size: 3rem;
+    margin: auto auto;
+    padding: 1rem;
+    border: 5px black double;
+    width: fit-content;
+    line-height: 0.8;
+}
+#order-window form #priceDiv input:hover{
+    cursor: pointer;
+}
+#deliveryAdress{
+    display: none;
+    margin-bottom: 1rem;
+}
+#deliveryAdress p{
+    font-size: 1rem;
+}
+#deliveryAdress input{
+    font-size: 1rem;
+}
+#pickupInfo{
+    display: none;
+    margin-bottom: 1rem;
+}
+#order-window form #infoDiv .right-side .thick{
+    font-weight: 800;
+}
+.delete-item{
+    margin-left: 1rem;
+    height: calc(100% - 6px);
+    border-radius: 50%;
+    border: 3px transparent solid;
+    transition: 0.5s;
+}
+.delete-item:hover{
+    cursor: pointer;
+    border: 3px black solid;
+}
+@media screen and (max-width: 1200px) and (min-width: 801px){
+    #order-window{
+        width: 94vw;
+        height: unset;
+        overflow: scroll;
+    }
+    #order-window #infoDiv{
+        grid-template-columns: 1fr;
+        row-gap: 5vh;
+    }
+    #order-window form #infoDiv .left-side{
+        border-right: 0px transparent solid;
+        border-bottom: 1px black solid;
+        padding-bottom: 5vh;
+    }
+    #order-window form #infoDiv .right-side{
+        border-left: 0px transparent solid;
+        border-bottom: 1px black solid;
+        padding-bottom: 5vh;
+    }
+    input[type='checkbox']{
+        margin-left: 2vw;
+        transform: scale(2);
+    }
+    #order-window form #priceDiv{
+        border: unset;
+        margin-bottom: 5vh;
+    }
+    .delete-item{
+        height: 100%;
+    }
+}
+@media(max-width: 800px){
+    header{
+        font-size: 20vw;
+    }
+    h2{
+        font-size: 10vw;
+    }
+    #order-window{
+        width: 90%;
+        height: unset;
+        max-width: unset;
+        min-width: unset;
+        overflow: scroll;
+    }
+    #order-window form #infoDiv .left-side h2{
+        font-size: 8vw;
+    }
+    #order-window #infoDiv{
+        grid-template-columns: 1fr;
+        row-gap: 5vh;
+    }
+    #order-window p{
+        font-size: 6vw;
+    }
+    #order-window form #infoDiv .right-side .thick{
+        font-size: 70%;
+    }
+    #order-window form #infoDiv .left-side{
+        border-right: 0px transparent solid;
+        border-bottom: 1px black solid;
+        padding-bottom: 5vh;
+    }
+    #order-window form #infoDiv .right-side{
+        border-left: 0px transparent solid;
+        border-bottom: 1px black solid;
+        padding-bottom: 5vh;
+    }
+    input[type='checkbox']{
+        margin-left: 2vw;
+        transform: scale(2);
+        transition: 0s;
+    }
+    #order-window form #priceDiv{
+        border: unset;
+        margin-bottom: 5vh;
+    }
+    #order-window form input[type="text"]{
+        width: 90%;
+    }
+    #order-window form input[type="number"]{
+        border-radius: 0px;
+        width: 5rem;
+    }
+    .cart-grid{
+        grid-template-columns: 6fr 1fr;
+        width: 100%;
+    }
+    .cart-grid li{
+        font-size: 5vw;
+    }
+    button{
+        font-size: 8vw;
+    }
+    .delete-item{
+        margin-left: 0;
+        width: 90%;
+        height: 50%;
+        margin-top: 25%;
+        border-color: black;
+    }
+}

@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Turret Road';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("turret_road/TurretRoad-Regular.ttf");
+}
+@font-face {
+  font-family: 'Turret Road';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("turret_road/TurretRoad-ExtraBold.ttf");
+}

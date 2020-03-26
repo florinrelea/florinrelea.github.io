@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Produs</title>
+        <link rel="stylesheet" href="../fonts/turret_road.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="product.css"/>
+    </head>
+    <body>
+        <div id="items-grid">
+            <div id="container-1" class="container">
+                <header id="myHead"></header>
+                <img id="img" src="">
+            </div>
+            <div id="container-2" class="container">
+                <p class="price"><img src="../images/mnySign.png"><span id="price"></span></p>
+                <button id="buy-button">Cumpara</button>
+            </div>
+            <div id="container-3" class="container">
+                <h1 id="h1">Title:</h1>
+                <p id="description">Descriere</p>
+            </div>
+        </div>
+        <!--Add element to CART-->
+        <div id="item-in-cart">
+            <img class="close-window" src="../images/close.png">
+            <!-- add item to sold vector in cookies -->
+            <form id="submit-item-to-cart">
+                <h2 id="product-name">Produs</h2>
+                <p>Cantitate: </p>
+                <input id="stock-quantity" type="number" min="1" max="" required><br>
+                <button type="submit">Adauga in cos</button>
+            </form>
+        </div>
+        <div id="item-added">
+            <h2>Produs adaugat in cos</h2>
+            <img src="../images/cart.png">
+        </div>
+        <div id="bottom-bar">
+            <p>Lethal Shop &copy; <span id="copyPeriod">2019-2020<span></p>
+            <!-- <p2>Despre Contactati-ne</p2> -->
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase.js"></script>
+        <script type="text/javascript" src="../startInventory.js"></script>
+        <script type="text/javascript" src="product.js"></script>
+        <script type="text/javascript" src="YWRkIGl0ZW0gdG8gY2FydA==.js"></script>
+    </body>
+</html>

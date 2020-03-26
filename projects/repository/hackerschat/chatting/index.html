@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>HackersChat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6580071577975525",
+            enable_page_level_ads: true
+        });
+        </script> -->
+        <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="loadingScreen">
+            <svg id="loadingSvg" height="500" width="500">
+                    <path d="M50 180 q 200 -150 400 0, q70 50 0 120, q-10 10 -100 20, L380 420, L300 350, q-250 0 -260 -100, q-5 -60 15 -73" stroke="white" stroke-width="25" fill="none" />
+            </svg>
+        </div>
+        <form id="lonelyForm">
+            <input type="text" id="inputMessage">
+            <input type="submit" value="Send" id="send">
+        </form>
+        <script type="text/javascript" src="../loadingFeatures/loading.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase.js"></script>
+        <style>@import "../loadingFeatures/loadingStyle.css";</style>
+        <script src="main.js"></script>
+    </body>
+</html>

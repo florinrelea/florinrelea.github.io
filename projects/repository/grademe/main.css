@@ -1,0 +1,113 @@
+@media(min-width: 800px){
+    body{
+        background-image: linear-gradient(yellow, white);
+    }
+    #center_object{
+        position:absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        width: 80%;
+    }
+    .fill_space{
+        position:absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        width: 60%;
+        height: 100%;
+        font-family: 'Permanent Marker', cursive;
+        padding-left: 40px;
+        border-right: 1px black solid;
+        border-left: 1px black solid;
+    }
+    header{
+        width:50%;
+        font-size: 60px;
+        border-bottom: 10px black double;
+    }
+    p{
+        font-size: 30px;
+    }
+    button{
+        border: 4px outset;
+        font-size: 25px;
+        font-family: 'Comfortaa', cursive;
+        background-color: white;
+        border-radius: 2px;
+        margin-bottom: 10px;
+        
+    }
+    button:hover{
+        border: black 4px solid;
+    }
+    #highschool{
+        position:absolute;
+        top: 0px;
+        right: 0px;
+        width: 120px;
+    }
+    #door{
+        position:absolute;
+        right: 0px;
+        bottom: 0px;
+        width: 25%;
+    }
+    #apple_man{
+        width: 14%;
+    }
+    marquee{
+        position: absolute;
+        left:0px;
+        bottom: 0px;
+        margin-right:8%;
+    }
+    #box1{
+        width: 60%;
+        border: 5px black solid;
+    }
+    #box2{
+        width: 60%;
+        border: 5px black solid;
+    }
+    .corner_box{
+        position: absolute;
+        top: 0px;
+        left:0px;
+        width: 12%;
+        height:100%;
+        background-image: linear-gradient(white, yellow);
+        border-right: 1px black solid;
+    }
+    #p3{
+        font-family: 'Permanent Marker', cursive;
+        font-size:25px;
+        border-bottom: 2px black solid;
+        width: 80%;
+    }
+    .corner_p{
+        font-size: 20px;
+        font-family: 'Comfortaa', cursive;
+    }
+    #author{
+        position: absolute;
+        bottom: 0px;
+        font-family: 'Comfortaa', cursive;
+        font-size: 8px;
+        color: black;
+    }
+    #button_dev{
+        position: absolute;
+        bottom: 2%;
+        left: 10%;
+        width: 80%;
+        color: black;
+        font-family: 'Comfortaa', cursive;
+        font-size: 0.9vw;
+        background-color: rgb(255, 255, 143);
+    }
+}

@@ -1,0 +1,68 @@
+<header style="font-size: 3rem;font-weight: 400;background-color: var(--primaryBackground);text-align: center;color: black;">Ca La Depozit</header>
+<h1 style="margin-left: auto;margin-right: auto;font-size: 2rem;width: 80%;text-align: center;background-color: black;color: rgba(255, 255, 255, 1);">Comanda Noua</h1>
+<center><img src="package.png" alt="Package" style="width: 50vw;margin-top: 5%;max-width: 100%;"></center>
+<!--find a solution to replace the -center- tag-->
+<div class="grid" style="display: grid;margin-top: 5vh;width: 80vw;margin-left: auto;margin-right: auto;grid-template-columns: 1fr;text-align: center;border: 1px black solid;font-size: 1.5rem;">
+    <li style="list-style-type: none;width: 100%;border-top: 0px transparent solid;border-bottom: 1px black solid;background-color: var(--primaryBackground);font-weight: 1000;font-size: 2rem;">Client:</li>
+    <p id="customer" style="line-height: 0;">Name</p>
+    <li style="list-style-type: none;width: 100%;border-top: 1px black solid;border-bottom: 1px black solid;background-color: var(--primaryBackground);font-weight: 1000;font-size: 2rem;">Produs</li>
+    <p id="product" style="line-height: 0;">Produs</p>
+    <li style="list-style-type: none;width: 100%;border-top: 1px black solid;border-bottom: 1px black solid;background-color: var(--primaryBackground);font-weight: 1000;font-size: 2rem;">Cantitate:</li>
+    <p id="quantity" style="line-height: 0;">1</p>
+    <li style="list-style-type: none;width: 100%;border-top: 1px black solid;border-bottom: 1px black solid;background-color: var(--primaryBackground);font-weight: 1000;font-size: 2rem;">Livrare:</li>
+    <p id="customerAdress" style="line-height: 0;">Street -> Nb</p>
+    <li style="list-style-type: none;width: 100%;border-top: 1px black solid;border-bottom: 1px black solid;background-color: var(--primaryBackground);font-weight: 1000;font-size: 2rem;">Total de plata:</li>
+    <p id="charge" style="line-height: 0;">Money ammount</p>
+</div>
+<style>
+    :root{
+        --primaryBackground: rgba(100, 100, 100, 0.3);
+    }
+    header{
+        font-size: 3rem;
+        font-weight: 400;
+        background-color: var(--primaryBackground);
+        text-align: center;
+        color: black;
+    }
+    h1{
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 2rem;
+        width: 80%;
+        text-align: center;
+        background-color: black;
+        color: rgba(255, 255, 255, 1);
+    }
+    img{
+        width: 50vw;
+        margin-top: 5%;
+        max-width: 100%;
+    }
+    .grid{
+        display: grid;
+        margin-top: 5vh;
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+        grid-template-columns: 1fr;
+        text-align: center;
+        border: 1px black solid;
+        font-size: 1.5rem;
+    }
+    .grid li{
+        list-style-type: none;
+        width: 100%;
+        border-top: 1px black solid;
+        border-bottom: 1px black solid;
+        background-color: var(--primaryBackground);
+        font-weight: 1000;
+        font-size: 2rem;
+    }
+    .grid li:first-child{
+        border-top: 0px transparent solid;
+    }
+    .grid p{
+        line-height: 0;
+    }
+</style>

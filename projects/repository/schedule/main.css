@@ -1,0 +1,85 @@
+    body{
+        background-image: url('backgroundPaper.png');
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-attachment: fixed;
+    }
+    header{
+        font-family: 'Permanent Marker', cursive;
+        font-size: 50px;
+        text-align: center;
+        color: white;
+        width: 500px;
+        height: 100px;
+        background-color: black;
+        opacity: 0.7;
+        margin-top: 30px;
+        margin-bottom: 70px;
+        border: 5px white double;
+    }
+    #box{
+        width: 700px;
+        height: 140px;
+        margin-top: 20px;
+        background-color: black;
+        opacity: 0.85;
+        color: white;
+        font-family: 'Permanent Marker', cursive;
+        font-size: 25px;
+        line-height: 60%;
+        border: 2px white solid;
+    }
+   .corner{
+        position: absolute;
+        line-height: 100%;
+        opacity: 1.0;
+        width: 50px;
+        height: 50px;
+        font-family: 'Permanent Marker', cursive;
+        font-size: 50px;
+        color: black;
+        background-color: white;
+        text-align: center;
+        border-radius:40px;
+    }
+    #staticCorner{
+        position: sticky;
+        top: 10px;
+        left: 10px;
+        height: 150px;
+        width: 300px;
+        line-height: 60%;
+        background-color: black;
+        opacity: 0.7;
+        color: white;
+        font-family: 'Permanent Marker', cursive;
+        font-size: 25px;
+        border: 3px white double;
+    }
+    #taskNumber,#taskNumberV2{
+        color: red;
+    }
+    #schoolTime{
+        display: none;
+    }
+@media(max-width: 700px){
+    body{
+        background-position: center;
+    }
+    header{
+        width: 80%;
+        height: 20%;
+        margin-top: 1%;
+        margin-bottom: 2%;
+        font-size: 40px;
+    }
+    #box{
+        width: 95%;
+        height: 10%;
+    }
+    #staticCorner{
+        position: relative;
+        left: calc(50% - 150px);
+        margin-bottom: 5%;
+    }
+}

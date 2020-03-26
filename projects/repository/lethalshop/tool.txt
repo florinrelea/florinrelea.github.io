@@ -1,0 +1,39 @@
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA9UwiSGfQNSOsquDt7RlXfUcror8uc_o8",
+    authDomain: "deposit-944e4.firebaseapp.com",
+    databaseURL: "https://deposit-944e4.firebaseio.com",
+    projectId: "deposit-944e4",
+    storageBucket: "",
+    messagingSenderId: "899942969217",
+    appId: "1:899942969217:web:83db61c5c47e77f9d2c280"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+
+
+
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA9UwiSGfQNSOsquDt7RlXfUcror8uc_o8",
+  authDomain: "deposit-944e4.firebaseapp.com",
+  databaseURL: "https://deposit-944e4.firebaseio.com",
+  projectId: "deposit-944e4",
+  storageBucket: "",
+  messagingSenderId: "899942969217",
+  appId: "1:899942969217:web:83db61c5c47e77f9d2c280"
+};
+
+
+//database link
+https://console.firebase.google.com/project/deposit-944e4/database/deposit-944e4/data

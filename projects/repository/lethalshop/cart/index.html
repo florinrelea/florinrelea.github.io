@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Cos de cumparaturi</title>
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="../fonts/turret_road.css">
+        <script type="text/javascript" src="../Z2xvYmFsIHNjcmlwdA==.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase.js"></script>
+    </head>
+    <body>
+        <a href="../index.html"><header>Lethal Shop</header></a>
+        <h2>Cos de cumparaturi</h2>
+        <div id="cart-grid" class="cart-grid"></div>
+        <h2>Total: <span id="totalCharge"></span></h2>
+        <center><button id="complete-order">Comanda</button></center>
+        <!-- Start the order -->
+        <div id="order-window">
+            <img class="close-window" src="../images/close.png">
+            <form method="get" action="../c2VydmVy/dHJpbWl0ZSBjb21hbmRh.php" id="sendOrder" >
+                <!-- You need this when submiting the order -->
+                <input name="product" id="productName" style="display: none">
+                <input name="quantity" id="productQuantity" style="display: none">
+                <input name="charge" id="orderCharge" style="display: none">
+                 <!-- You need this when submiting the order -->
+                <div id="infoDiv">
+                    <div class="left-side">
+                        <p>Nume: <input name="customerLN" type="text" id="customerSN" required></p>
+                        <p>Prenume: <input name="customerFN" type="text" id="customerFN" required></p>
+                        <p>Email: <input name="customerEmail" type="email" id="customerEmail" required></p>
+                    </div>
+                    <!-- Metode de livrare -->
+                    <div class="right-side">
+                        <p class="thick">Cum primesc comanda? </p>
+                        <p class="lower-text">Ridicare personala <input type="checkbox" id="deliveryFalse" name="deliveryFalse" checked></p>
+                        <p id="pickupInfo" >Ridicare: Pildesti</p>
+                        <p class="lower-text">Livrare la domiciliu - <span>PRET: 10 RON</span> <input type="checkbox" id="deliveryTrue" name="deliveryTrue"></p>
+                        <div id="deliveryAdress">
+                            <p>Strada:</p>
+                            <input name="street" type="text" id="street">
+                            <p>Numar casa:</p>
+                            <input name="houseNumber" type="number" min="0" id="houseNumber">
+                        </div>
+                    </div>
+                </div>
+                <div id="priceDiv">
+                    <p id="total">Total: <span id="totalPrice">10 RON</span></p>
+                    <input type="submit" value="Cumpara">
+                </div>
+            </form>
+        </div>
+        <script type="text/javascript" src="../startInventory.js"></script>
+        <script type="text/javascript" src="order.js"></script>
+        <script type="text/javascript" src="Y2FydCBsb2dpYw==.js"></script>
+    </body>
+</html>

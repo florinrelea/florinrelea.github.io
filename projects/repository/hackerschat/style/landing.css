@@ -1,0 +1,84 @@
+html{
+    /*url("../images/background.png")*/
+    background: url("../images/background_small.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#sideBar{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 500px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+}
+p{
+    line-height: 50%;
+    color: white;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 50px;
+}
+#title{
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: dash 1.5s linear alternate infinite;
+}
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+button{
+    background-color: transparent;
+    width: 200px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 10%;
+    font-family: 'Bree Serif', serif;
+    font-size: 30px;
+    border: 1px transparent solid;
+    border-top: 1px rgba(255, 255, 255, 0.4) solid;
+    border-bottom: 1px rgba(255, 255, 255, 0.4) solid;
+    transition: 0.3s;
+}
+button:hover{
+    background-color: rgba(0, 0, 0, 0.6);
+    color: rgba(255, 255, 255, 1);
+    border: 1px transparent solid;
+    border-left: 5px white solid;
+    border-right: 5px white solid;
+    border-radius: 30px;
+    cursor: pointer;
+}
+#description{
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+    right: 0px; 
+    font-size: 20px;
+    font-family: 'Bree Serif', serif;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 50%;
+    padding-top: 10px;
+    border-top: 1px white solid;
+}
+@media(max-width: 700px){
+    html{
+        background-attachment: fixed;
+        min-height:100%;
+    }
+    #description{
+        position: unset;
+        border: none;
+        margin-top: 20%;
+        margin-bottom: 10%;
+    }
+}
+@media(max-width: 480px){
+    #sideBar{
+        width: 100%;
+        height: unset;
+    }
+}

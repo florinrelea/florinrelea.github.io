@@ -1,0 +1,200 @@
+@import  "smallScreens.css";
+:root{
+    --customBorder1: 4px;
+}
+html{
+    background-attachment: fixed;
+    background-image: url("../aW1hZ2Vz/background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 1rem;
+    color: red;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+}
+header{
+    font-family: 'Notable', sans-serif;
+    font-size: 8rem;
+    text-align: center;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: white;
+    line-height: 0.8;
+}
+h1{
+    font-family: 'Notable', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: 0.5rem;
+}
+a{
+    text-decoration: none;
+    color: unset;
+}
+.nav-bar{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 50%;
+    min-width: 600px;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 5vh;
+    color: white;
+    /* color: rgba(32, 178, 170, 1); */
+    font-weight: 500;
+    /* background-image: linear-gradient(to right, rgba(255, 0, 0, 0.7), rgba(255, 255, 255, 0.7)); */
+    background-color: rgba(255, 0, 0, 0.3);
+    transition: 0.5s;
+    border-radius: 30px;
+}
+.nav-bar ul{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    padding-left: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    border-radius: 30px;
+    border-bottom: 3px white solid;
+}
+.nav-bar ul li{
+    padding: 1rem;
+    border-right: var(--customBorder1) white solid;
+    transition: 0.2s;
+    border-radius: 30px;
+    transition: .3s;
+}
+.nav-bar ul li:hover{
+    border-left: var(--customBorder1) white solid;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: red;
+}
+.car-menu{
+    display: grid;
+    padding-left: 0;
+    width: 70%;
+    list-style-type: none;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10vw;
+    min-width: 800px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 30vh;
+    padding-bottom: 0;
+}
+
+/* --- Continue here --- */
+.car-menu .car{
+    width: 100%;
+    max-width: 600px;
+    transition: 0.5s;
+    border: 5px transparent solid;
+    transition: 1s;
+}
+.bottom-bar{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    background-color: rgba(255, 0, 0, 0.6);
+    color: white;
+}
+/* temp center image*/
+.car:hover{
+    cursor: pointer;
+    transform: scale(1.3);
+}
+.description{
+    width: 400px;
+    margin: auto;
+    text-align: left;
+    padding-left: 1rem;
+    font-size: 1rem;
+    /* -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white; */
+    color: white;
+    border: 2px red solid;
+    border-top: 2vh red double;
+    border-bottom: 2vh red double;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.2rem;
+    line-height: 1.5;
+    margin-bottom: 10vh;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+h4{
+    width: fit-content;
+    margin: auto;
+    font-size: 4rem;
+    font-family: 'Notable', sans-serif;
+    text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border-left: 1vw red solid;
+    border-right: 1vw red solid;
+    border-bottom: 2px red solid;
+    margin-bottom: 5vh;
+}
+@keyframes flyFromLeft{
+    from{transform: translateX(-100vw)}
+    to{transform: translateX(0)}
+}
+
+
+@media(max-width: 800px){
+    header{
+        font-size: 15vw;
+    }
+    h1{
+        font-size: 5vw;
+        padding-bottom: 10vh;
+    }
+    img{
+        width: 100%;
+    }
+    .nav-bar{
+        position: unset;
+        min-width: unset;
+        width: 100%;
+        margin-top: 10vh;
+
+    }
+    .nav-bar ul{
+        grid-template-columns: 1fr;
+        border: unset;
+        border-left: 3px white solid;
+        border-right: 3px white solid;
+        border-bottom: 3px white solid;
+    }
+    .nav-bar ul li{
+        border: unset;
+        border-top: 3px white solid;
+    }
+    .car-menu{
+        width: 80%;
+        min-width: unset;
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        row-gap: 10vh;
+    }
+    .car:hover{
+        transform: unset;
+        width: 70%;
+    }
+    .nav-bar ul li:hover{
+        border-left: unset;
+    }
+    .description{
+        width: 90%;
+        font-size: 3vw;
+    }
+}

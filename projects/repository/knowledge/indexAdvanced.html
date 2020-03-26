@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>KnowLedge</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="mainAdvanced.css">
+        <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace" rel="stylesheet">
+        <script src="sketch.js"></script>
+    </head>
+    <body lang="eng">
+        <div id="container">
+            <div id="mainContent">
+                <center>
+                <header>Tell me something about: </header>
+                <form method="POST" id="formular">
+                        <input type="text" id="name"><br>
+                        <input type="submit" name="cautare" id="cautare" value="Search"/>
+                </form>
+                </center>
+            </div>
+            <div id="foundProfile">
+                <center>
+                <img src="images/person.png" id="personImage">
+                <p id="par1">Name: </p>
+                <p id="nameBox" class="textBox"></p>
+                <p id="par1">Age: </p>
+                <p id="ageBox" class="textBox"></p>
+                <p id="par1">Adress: </p>
+                <p id="adressBox" class="textBox"></p>
+                <button id="reloadBtn" onclick="reload()">Search more</button>
+                </center>
+            </div>
+        <script src="cursorEffect.js"></script>
+        </div>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script src="main.js"></script>
+    </body>
+</html>

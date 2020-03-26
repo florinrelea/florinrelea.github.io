@@ -1,0 +1,85 @@
+html{
+    background-image: url("../images/bkdLog_small.png");
+    background-repeat: repeat;
+}
+#mainSvg{
+    display: none;
+   
+}
+input{
+    background-color: rgba(255, 255, 255, 0.3);
+    color: black;
+    border:none;
+    border-radius: 20px;
+    border-bottom: 5px rgba(0, 0, 0, 0.8) solid;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Righteous', cursive;
+}
+button{
+    margin-top: 100px;
+    width: 120px;
+    height: 40px;
+    border: 3px black solid;
+    color: white;
+    transition: 0.5s;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: 'Righteous', cursive;
+    font-size: 20px;
+}
+button:hover{
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 35px;
+}
+#centerBox{
+    position: absolute; 
+    top: 0px; 
+    left:0px; 
+    bottom: 0px; 
+    right: 0px; 
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    font-family: 'Righteous', cursive;
+    border: 5px rgba(0, 0, 0, 0.4) solid;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    display: none;
+} /*svg aswell*/
+p{
+    font-size: 40px;
+}
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+@media(max-width:600px){
+    #mainSvg{
+        display: block;
+    }
+    #title{
+        stroke-dasharray: 500;
+        stroke-dashoffset: 500;
+        animation: dash 1.5s linear alternate-reverse infinite;
+    }
+    #mainSvg{
+        margin: 0;
+    }
+    #centerBox{
+        position: unset;
+        width: 100%;
+        height: unset;
+        border: none;
+        border-radius: 50px;
+        background-color: transparent;
+    }
+    p{
+        font-size: 10vw;
+    }
+    button{
+        margin-bottom: 10%;
+    }
+}

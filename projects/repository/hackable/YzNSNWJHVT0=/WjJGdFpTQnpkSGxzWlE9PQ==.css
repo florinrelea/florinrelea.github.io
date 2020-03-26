@@ -1,0 +1,110 @@
+@import 'WkdWbVlYVnNkQT09.css';
+:root{
+    --mainColor: rgb(0, 150, 0);
+    --secondColor: rgb(0, 100, 0);
+    --shadow1: 3px 3px 0px 0px var(--secondColor);
+    --canvasWidth: 430px;
+    --canvasHeight: 350px;
+}
+#main_menu{
+    width: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#main_menu i, .modal-close .btns .btn{
+    display: block;
+    background-color: unset;
+    border: unset;
+    background-color: rgb(220, 220, 220);
+    padding: 10px;
+    border-radius: 20px;
+    color: var(--mainColor);
+    text-align: center;
+    animation: 0.3s buttonTremble alternate infinite;
+    box-shadow: var(--shadow1);
+    border: 1px black solid;
+}
+#main_menu i:nth-child(2){
+    animation-delay: 0.1s;
+}
+#main_menu i:nth-child(3){
+    animation-delay: 0.2s;
+}
+#main_menu i:hover, .modal-close .btns .btn:hover{
+    cursor: pointer;
+    animation: unset;
+}
+#main_menu i:active, .modal-close .btns .btn:active{
+    transform: translate(3px, 3px);
+    color: red;
+    box-shadow: unset;
+}
+#audio-confirm{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+}
+.modal-close{
+    position: fixed;
+    width: 300px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(150, 150, 150, 0.7);
+    font-size: 20px;
+    padding: 10px;
+    border: 2px blue solid;
+    display: none;
+}
+.modal-close .btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.displayer{
+    width: 700px;
+    height: 600px;
+    background-position: center;
+    background-image: url("../WkdWd1pXNWtaVzVqYVdWeg==/sprites/canvasSupport.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 5px black solid;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.displayer #monitor{
+    background-color: black;
+    position: absolute;
+    top: 90px;
+    left: 110px;
+    border: 5px grey solid;
+}
+.displayer #console-form{
+    position: absolute;
+    bottom: 160px;
+    left: 120px;
+    display: none;
+}
+.displayer #console-form input{
+    width: calc(var(--canvasWidth) - 20px);
+    font-size: 14px;
+    font-family: 'Consolas';
+    border: unset;
+    color: rgb(0, 200, 0);
+    background-color:  unset;
+    padding-left: 10px;
+}
+@keyframes buttonTremble{
+    from{}
+    to{
+        transform: translate(0px, 5px);
+    }
+}

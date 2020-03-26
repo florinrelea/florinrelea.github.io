@@ -1,0 +1,157 @@
+//
+//
+//      DEVELOPED BY: Relea Florin Iacob
+//
+//
+#include <stdint.h>
+#include "TouchScreen.h"
+#include <Adafruit_TFTLCD.h> // Hardware-specific library
+// define - start
+    #define LCD_CS A3
+    #define LCD_CD A2
+    #define LCD_WR A1
+    #define LCD_RD A0
+    // optional
+    #define LCD_RESET A4
+    #define YP A1  // must be an analog pin, use "An" notation!
+    #define XM A2  // must be an analog pin, use "An" notation!
+    #define YM 7   // can be a digital pin
+    #define XP 6   // can be a digital pin
+    #define TS_MINX 150
+    #define TS_MINY 120
+    #define TS_MAXX 920
+    #define TS_MAXY 940
+    #define MINPRESSURE 10
+    #define MAXPRESSURE 1000
+    TouchScreen ts = TouchScreen(XP, YP, XM, YM, 300);
+    Adafruit_TFTLCD tft(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET);
+    // Assign human-readable names to some common 16-bit color values:
+    #define  BLACK   0x0000
+    #define BLUE    0x001F
+    #define RED     0xF800
+    #define GREEN   0x07E0
+    #define CYAN    0x07FF
+    #define MAGENTA 0xF81F
+    #define YELLOW  0xFFE0
+    #define WHITE   0xFFFF
+// define - finish
+//function --> start
+void startup(){
+  tft.begin(0x9341);
+  tft.setRotation(1);
+  tft.fillScreen(WHITE);
+}
+void mouthAnimation(){
+  tft.drawLine(140,180,170,180,BLACK);
+  delay(100);
+  tft.drawLine(135,180,175,180,BLACK);
+  delay(100);
+  tft.drawLine(130,180,180,180,BLACK);
+  delay(100);
+  tft.drawLine(125,180,185,180,BLACK);
+  delay(100);
+  tft.drawLine(120,180,190,180,BLACK);
+  delay(100);
+  tft.drawLine(115,180,195,180,BLACK);
+  delay(100);
+  tft.drawLine(110,180,200,180,BLACK);
+  delay(100);
+  tft.drawLine(105,180,205,180,BLACK);
+  delay(100);
+  tft.drawLine(100,180,210,180,BLACK);
+  delay(100);
+  tft.drawLine(100,180,210,180,WHITE);
+  for(int i=0; i<=3;i++){
+        for(int z=0; z<=48 ; z+=8){
+            tft.drawRect(99,179,122,z,BLACK);
+            tft.drawRect(98,178,124,z+2,BLACK);
+            tft.fillRect(100,180,120,z-2,RED);
+            delay(60);
+            tft.drawRect(99,179,122,z,WHITE);
+            tft.drawRect(98,178,124,z+2,WHITE);
+        }
+        delay(80);
+        tft.fillCircle(260,60,49,GREEN);
+        tft.fillCircle(60,60,49,GREEN);
+        tft.fillRect(100,180,120,46,WHITE);
+        for(int z=48; z>=0 ; z-=8){
+            tft.drawRect(99,179,122,z,BLACK);
+            tft.drawRect(98,178,124,z+2,BLACK);
+            tft.fillRect(100,180,120,z-2,RED);
+            delay(60);
+            tft.drawRect(99,179,122,z,WHITE);
+            tft.drawRect(98,178,124,z+2,WHITE);
+            tft.fillRect(100,180,120,z-2,WHITE);
+        }
+   }
+}
+void zoomEffect(){
+  tft.fillScreen(BLACK);
+  for(int i=0;i<=198;i+=6){
+    tft.drawCircle(160,120,i,WHITE);
+    delay(50);
+  }
+  delay(200);
+  for(int i=198;i>=0;i-=6){
+    tft.drawCircle(160,120,i,BLACK);
+    delay(10);
+  }
+}
+void zoomEffect1(char color[]){
+  for(int i=0;i<=200;i+=20){
+      tft.fillCircle(160,120,i,color);
+      delay(1);
+  }
+}
+void human(){
+  tft.reset();
+  startup();
+  tft.setRotation(0);
+  tft.fillScreen(BLACK);
+  tft.drawCircle(120,20,10,WHITE);
+  
+}
+void drawFace(){
+    tft.drawCircle(60,60,50,BLACK);
+    tft.drawCircle(260,60,50,BLACK);
+    int dely = 200;
+    for(int i=0; i<=2 ; i++){
+      tft.fillCircle(260,60,49,WHITE);
+      tft.fillCircle(60,60,49,RED);
+      delay(dely);
+      tft.fillCircle(60,60,49,WHITE);
+      tft.fillCircle(260,60,49,GREEN);
+      delay(dely);
+      tft.fillCircle(260,60,49,WHITE);
+      tft.fillCircle(60,60,49,GREEN);
+      delay(dely);
+      tft.fillCircle(60,60,49,WHITE);
+      tft.fillCircle(260,60,49,RED);
+      delay(dely);
+    }
+    tft.fillCircle(60,60,49,RED);
+    mouthAnimation();
+}
+//function --> finish
+void setup(void){
+startup();
+zoomEffect();
+tft.reset();
+startup();
+}
+
+void loop(void){
+drawFace();
+tft.reset();
+startup();
+zoomEffect1(BLACK);
+zoomEffect1(BLUE);
+zoomEffect1(RED);
+zoomEffect1(GREEN);
+zoomEffect1(CYAN);
+zoomEffect1(MAGENTA);
+zoomEffect1(YELLOW);
+zoomEffect1(WHITE);
+tft.reset();
+startup();
+}

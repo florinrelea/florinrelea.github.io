@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Add Data</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="addInfo.css">
+        <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+    </head>
+    <body id="body" lang="eng">
+        <center><div id="mainContent">
+            <header>Would you like to add some data about someone?</header>
+            <form method="POST" id="form1">
+                <p id="p1">Name</p>
+                <input type="text" id="freshName" class="box1"><br>
+                <p id="p1">Age</p>
+                <input type="number" id="age" class="box1" min="1" max="150">
+                <p id="p1">Adress</p>
+                <input type="text" id="adress" class="box1">
+                <br>
+                <input type="submit" name="cautare" id="cautare" value="Add data"/>
+            </form>
+        </div>
+        <img id="thxImage" src="images/thanks.png">
+        </center>
+        <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+        <script src="addInfo.js"></script>
+    </body>
+</html>

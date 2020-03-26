@@ -1,0 +1,206 @@
+//
+//
+//      DEVELOPED BY: Relea Florin Iacob
+//
+//
+#include <stdint.h>
+#include "TouchScreen.h"
+#include <Adafruit_TFTLCD.h> // Hardware-specific library
+// define - start
+    #define LCD_CS A3
+    #define LCD_CD A2
+    #define LCD_WR A1
+    #define LCD_RD A0
+    // optional
+    #define LCD_RESET A4
+    #define YP A1  // must be an analog pin, use "An" notation!
+    #define XM A2  // must be an analog pin, use "An" notation!
+    #define YM 7   // can be a digital pin
+    #define XP 6   // can be a digital pin
+    #define TS_MINX 150
+    #define TS_MINY 120
+    #define TS_MAXX 920
+    #define TS_MAXY 940
+    #define MINPRESSURE 10
+    #define MAXPRESSURE 1000
+    TouchScreen ts = TouchScreen(XP, YP, XM, YM, 300);
+    Adafruit_TFTLCD tft(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET);
+    // Assign human-readable names to some common 16-bit color values:
+    #define  BLACK   0x0000
+    #define BLUE    0x001F
+    #define RED     0xF800
+    #define GREEN   0x07E0
+    #define CYAN    0x07FF
+    #define MAGENTA 0xF81F
+    #define YELLOW  0xFFE0
+    #define WHITE   0xFFFF
+// define - finish
+//function --> start
+void startup(){
+  tft.begin(0x9341);
+  tft.fillScreen(BLACK);
+}
+void human(){
+  tft.drawCircle(120,40,40,WHITE);
+  tft.drawLine(95,30,105,30,WHITE);
+  tft.drawLine(135,30,145,30,WHITE);
+  tft.drawLine(105,55,135,55,WHITE);
+  tft.drawLine(120,80,120,220,WHITE);
+  tft.drawLine(120,220,70,300,WHITE);
+  tft.drawLine(120,220,170,300,WHITE);
+}
+void eyesShape(int waiting, char color[]){
+        tft.fillCircle(100,30,5,color);
+        tft.fillCircle(140,30,5,color);
+        delay(waiting);
+        tft.fillCircle(100,30,5,BLACK);
+        tft.fillCircle(140,30,5,BLACK);
+        tft.fillRect(95,25,10,10,color);
+        tft.fillRect(135,25,10,10,color);
+        delay(waiting);
+        tft.fillRect(95,25,10,10,BLACK);
+        tft.fillRect(135,25,10,10,BLACK);
+        tft.fillTriangle(100,25,95,35,105,35,color);
+        tft.fillTriangle(140,25,135,35,145,35,color);
+        delay(waiting);
+        tft.fillTriangle(100,25,95,35,105,35,BLACK);
+        tft.fillTriangle(140,25,135,35,145,35,BLACK);
+}
+void eyesAnimation(){
+    tft.drawLine(95,30,105,30,BLACK);
+    tft.drawLine(135,30,145,30,BLACK);
+    tft.fillRect(105,55,30,11,BLACK);
+    int mouth = 1;
+    for(int i=1;i<=5;i++){
+      tft.fillCircle(100,30,i,WHITE);
+      tft.fillCircle(140,30,i,WHITE);
+      tft.fillRect(105,55,30,mouth,WHITE);
+      mouth+=2;
+      delay(100);
+    }
+    eyesShape(700,RED);
+    eyesShape(500,GREEN);
+    eyesShape(300,CYAN);
+    eyesShape(300,MAGENTA);
+    eyesShape(100,WHITE);
+    for(int i=0;i<=5;i++){
+      eyesShape(80,RED);
+    }
+    for(int i=0;i<=3;i++){
+        tft.fillCircle(100,30,5,RED);
+        tft.fillCircle(140,30,5,BLUE);
+        delay(100);
+        tft.fillCircle(100,30,5,BLUE);
+        tft.fillCircle(140,30,5,RED);
+        delay(100);
+    }
+}
+void handsAnimation(){
+    int leftHand=70;
+    int rightHand=170;
+    for(int i=180;i>=100;i-=4){
+        tft.drawLine(120,100,leftHand,i,WHITE);
+        tft.drawLine(120,100,rightHand,i,WHITE);
+        delay(1);
+        tft.drawLine(120,100,leftHand,i,BLACK);
+        tft.drawLine(120,100,rightHand,i,BLACK);
+        leftHand-=2;
+        rightHand+=2;
+    }
+    tft.drawLine(120,100,30,100,WHITE);
+    tft.drawLine(120,100,210,100,WHITE);
+    for(int i=100;i>=40;i-=4){
+        tft.drawLine(70,100,leftHand,i,WHITE);
+        tft.drawLine(170,100,rightHand,i,WHITE);
+        delay(1);
+        tft.drawLine(70,100,leftHand,i,BLACK);
+        tft.drawLine(170,100,rightHand,i,BLACK);
+        leftHand+=2;
+        rightHand-=2;
+    }
+    for(int i=40;i<=100;i+=4){
+        tft.drawLine(70,100,leftHand,i,WHITE);
+        tft.drawLine(170,100,rightHand,i,WHITE);
+        delay(1);
+        tft.drawLine(70,100,leftHand,i,BLACK);
+        tft.drawLine(170,100,rightHand,i,BLACK);
+        leftHand-=2;
+        rightHand+=2;
+    }
+    for(int i=100;i<=180;i+=4){
+        tft.drawLine(120,100,leftHand,i,WHITE);
+        tft.drawLine(120,100,rightHand,i,WHITE);
+        delay(1);
+        tft.drawLine(120,100,leftHand,i,BLACK);
+        tft.drawLine(120,100,rightHand,i,BLACK);
+        leftHand+=2;
+        rightHand-=2;
+    }
+    tft.drawLine(120,100,70,180,WHITE);
+    tft.drawLine(120,100,170,180,WHITE);
+    eyesAnimation();
+}
+void legsMovement(){
+      tft.drawLine(120,220,70,300,BLACK);
+      tft.drawLine(120,220,170,300,BLACK);
+      //new legs
+      tft.drawLine(120,220,90,260,WHITE);
+      tft.drawLine(120,220,150,260,WHITE);
+      tft.drawLine(90,260,90,300,WHITE);
+      tft.drawLine(150,260,150,300,WHITE);
+      for(int i=0;i<=3;i++){
+          int leftLeg=90;
+          int rightLeg=150;
+          for(int i=0;i<=30;i+=2){
+              tft.drawLine(120,220,leftLeg,260,WHITE);
+              tft.drawLine(leftLeg,260,90,300,WHITE);
+              tft.drawLine(120,220,rightLeg,260,WHITE);
+              tft.drawLine(rightLeg,260,150,300,WHITE);
+              delay(1);
+              tft.drawLine(120,220,leftLeg,260,BLACK);
+              tft.drawLine(leftLeg,260,90,300,BLACK);
+              tft.drawLine(120,220,rightLeg,260,BLACK);
+              tft.drawLine(rightLeg,260,150,300,BLACK);
+              leftLeg+=2;
+              rightLeg-=2;
+          }
+          for(int i=30;i>=0;i-=2){
+              tft.drawLine(120,220,leftLeg,260,WHITE);
+              tft.drawLine(leftLeg,260,90,300,WHITE);
+              tft.drawLine(120,220,rightLeg,260,WHITE);
+              tft.drawLine(rightLeg,260,150,300,WHITE);
+              delay(1);
+              tft.drawLine(120,220,leftLeg,260,BLACK);
+              tft.drawLine(leftLeg,260,90,300,BLACK);
+              tft.drawLine(120,220,rightLeg,260,BLACK);
+              tft.drawLine(rightLeg,260,150,300,BLACK);
+              leftLeg-=2;
+              rightLeg+=2;
+          }
+      }
+      tft.drawLine(120,220,90,260,WHITE);
+      tft.drawLine(120,220,150,260,WHITE);
+      int something = 150;
+      for(int i=90;i>=60;i--){
+        tft.drawLine(90,260,i,300,WHITE);
+        tft.drawLine(150,260,something,300,WHITE);
+        delay(1);
+        tft.drawLine(90,260,i,300,BLACK);
+        tft.drawLine(150,260,something,300,BLACK);
+        something++;
+      }
+      tft.drawLine(120,220,90,260,BLACK);
+      tft.drawLine(120,220,150,260,BLACK);
+      tft.drawLine(120,220,70,300,WHITE);
+      tft.drawLine(120,220,170,300,WHITE);
+}
+//function --> finish
+void setup(void){
+startup();
+human();
+}
+
+void loop(void){
+  handsAnimation();
+  legsMovement();
+}

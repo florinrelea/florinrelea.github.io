@@ -1,0 +1,86 @@
+@import 'WkdWbVlYVnNkQT09.css';
+:root{
+    --borderWidth_1: 3px;
+    --mainColor: rgb(0, 150, 0);
+    --secondColor: rgb(0, 100, 0);
+    --shadow1: 10px 10px 0px 0px var(--secondColor);
+}
+header{
+    font-size: 4rem;
+    text-align: center;
+    color: var(--mainColor);
+}
+.main-menu{
+    width:500px;
+    margin:auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.main-menu i{
+    margin-top: 100px;
+    font-size: 100px;
+    background-color: rgb(200, 200, 200);
+    padding: 20px;
+    border-radius: 20px;
+    color: var(--mainColor);
+    border: 1px black solid;
+    box-shadow: var(--shadow1);
+}
+.main-menu i:hover{
+    cursor: pointer;
+}
+.main-menu i:active{
+    transform: translate(10px, 10px);
+    box-shadow: unset;
+}
+.modal{
+    display: none;
+    position: fixed;
+    top: calc(50vh - 25% - 30px);
+    left: calc(50vw - 20% - 30px);
+    width:40%;
+    height:50%;
+    background-color: rgb(150 , 150, 150, 0.9);
+    padding: 30px;
+    border: 3px black solid;
+    font-size: 1.5rem;
+    transition: 0.5s;
+}
+.modal h{
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+    width: 10rem;
+    border-top: var(--borderWidth_1) black solid;
+    border-bottom: var(--borderWidth_1) black solid;
+    margin: auto;
+    animation: 0.5s headerExposed 1 linear;
+}
+.fa-window-close{
+    position:absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2.5rem;
+}
+.fa-window-close:hover{
+    cursor: pointer;
+    transform: scale(0.7);
+}
+@keyframes headerExposed{
+    from{
+        font-size: 0%;
+        border-width: 1rem;
+    }
+    to{
+        font-size: 2rem;
+        border-width: 3px;
+    }
+}
+@keyframes modalClose{
+    from{
+        transform:scale(1);
+    }to{
+        transform:scale(0);
+    }
+}
