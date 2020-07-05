@@ -19,9 +19,9 @@ function load_document() {
                         var lazyComponents = {
                               "base_id": "lazy_loaded",
                               "load_index": 1,
-                              "count": 14
+                              "count": 11
                         };
-                        function onscrollLoader() { 
+                        function onscrollLoader() {
                               // if document scrolled at elementview - display height then load div
                               if (document.documentElement.scrollTop >= document.getElementById(lazyComponents.base_id + "_" + lazyComponents.load_index).offsetTop - window.innerHeight) {
                                     console.log("Loading: " + lazyComponents.base_id, lazyComponents.load_index);
@@ -32,7 +32,7 @@ function load_document() {
                                           containerImages[x].src = containerImages[x].name;
                                     }
                                     lazyComponents.load_index++;
-                                    if (lazyComponents.load_index > lazyComponents.count) { 
+                                    if (lazyComponents.load_index > lazyComponents.count) {
                                           window.removeEventListener("scroll", onscrollLoader);
                                     }
                               }
